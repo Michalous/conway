@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <title>Game of Life Simulation</title>
+
+</head>
+<body>
+    <h1 id="headline">Conway's Game of Life</h1>
+    <div>
+        <h3>generation: <span id="count">1</span></h3>
+        <div id="game-container"></div>
+    </div>
+    <div>
+        <h3>live cells: <span id="live_cells"></span></h3>
+        <canvas id="myCanvas" width="320" height="320"></canvas>
+    </div>
+    <div id="messageDiv">
+        <h4 id="message">in progress...</h4>
+    </div>
+    <div id="restart">
+        <button>restart</button>
+    </div>
+   
+</body>
+</html>
