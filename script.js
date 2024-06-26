@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     restart.onclick = function() {window.location.reload()}
     
+    drawGrid()
+
     for (var i = 0; i < matrix_size; i++) {
         for (var j = 0; j < matrix_size; j++) {
             var square = document.createElement('div')
@@ -104,6 +106,34 @@ document.addEventListener('DOMContentLoaded', function() {
             return true
         }
         return false 
+    }
+
+    function drawGrid() {
+        ctx.beginPath();
+        ctx.strokeStyle = 'green'
+        
+        ctx.moveTo(0, 320 - 320 / 5)
+        ctx.lineTo(320, 320 - 320 / 5)
+        ctx.stroke()
+
+        ctx.moveTo(0, 320 - 640 / 5)
+        ctx.lineTo(320, 320 - 640 / 5)
+        ctx.stroke()
+        
+        ctx.moveTo(0, 320 - 960 / 5)
+        ctx.lineTo(320, 320 - 960 / 5)
+        ctx.stroke()
+        
+        ctx.moveTo(0, 320 - 1280 / 5)
+        ctx.lineTo(320, 320 - 1280 / 5)
+        ctx.stroke()
+
+        ctx.font = '15px Verdana';
+        ctx.fillStyle = 'green';
+        ctx.fillText('100', 285, 250);
+        ctx.fillText('200', 285, 185);
+        ctx.fillText('300', 285, 120);
+        ctx.fillText('400', 285, 58);
     }
 })
 
