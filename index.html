@@ -24,6 +24,86 @@
     <div id="restart">
         <button>restart</button>
     </div>
-   
+
+    <div id="an_head">
+        <h4>=== Data Analysis of 50,000 Simulations ===</h4>
+    </div>
+
+    <div id="graphs">
+        <div class="graph_container">
+            <p>Distribution with KDE</p>
+            <canvas class="graph" id="histogram" width="320" height="210"></canvas>
+        </div>
+        <div class="graph_container">
+            <p>Box Plot</p>
+            <canvas class="graph" id="box_plot" width="320" height="210"></canvas>
+        </div>
+        <div class="graph_container">
+            <p>Q-Q Plot (vs Normal Distribution)</p>
+            <canvas class="graph" id="q_q" width="320" height="210"></canvas>
+        </div>
+        <div class="graph_container">
+            <p>Cumulative Distribution Function</p>
+            <canvas class="graph" id="cumulativeDF" width="320" height="210"></canvas>
+        </div>
+    </div>
+    <div id="analysis">
+        <p>Sample size: <span id="sample_size"></span></p>
+        <p>Mean: <span id="mean"></span></p>
+        <p>Median: <span id="median"></span></p>
+        <p>Standard deviation: <span id="std"></span></p>
+        <p>Variance: <span id="variance"></span></p>
+        <p>Minimum: <span id="minimum"></span></p>
+        <p>Maximum: <span id="maximum"></span></p>
+        <p>Range: <span id="range"></span></p>
+        <p>25th Percentile (Q1): <span id="p25"></span></p>
+        <p>75th Percentile (Q3): <span id="p75"></span></p>
+        <p>Interquartaile Range (IQR): <span id="intqr"></span></p>
+        <p>Skewness: <span id="skewness"></span></p>
+        <p>Kurtosis: <span id="kurtosis"></span></p>
+        <p>Mode: <span id="mode"></span></p>
+        <br>
+        <p>Distribution shape: right-skewed (positive skew), leptokurtic (heavy tails)</p>
+        <br>
+        <p>Data range covers <span id="uv"></span> unique values</p>
+        <br>
+        <br>
+        <p>=== Interpretation ===</p>
+        <p>This data represents the number of generations until a cycle is detected
+in random 30x30 Game of Life grids starting from 50/50 alive/dead probability.</p>
+        <p>The average cycle detection takes about 209 steps.</p>
+        <p>The distribution is right-skewed, meaning most simulations find cycles relatively quickly,
+but some take much longer (outliers).</p>
+        <p>The Q-Q plot shows deviation from normality, particularly in the tails.</p>
+        <br>
+        <br>
+        <p>=== Visual Analysis ===</p>
+        <p>1. <strong>Histogram with KDE:</strong> Clear right-skew with a long tail of long cycles</p>
+        <p>2. <strong>Box Plot:</strong> Confirms the presence of many high-value outliers</p>
+        <p>3. <strong>Q-Q Plot:</strong> Significant deviation from normal distribution, especially in tails</p>
+        <p>4. <strong>CDF:</strong> Shows that ~75% of simulations complete within 264 steps</p>
+        <br>
+        <br>
+        <p>=== Key Insights ===</p>
+        <ul>
+            <li>
+                Most Game of Life patterns stabilize into cycles relatively quickly (median 175 steps)
+            </li>
+            <li>
+                However, some configurations are remarkably persistent, taking over 1,000 generations
+            </li>
+            <li>
+                The distribution is heavily skewed, suggesting that while typical behaviour is predictable, extreme cases exist
+            </li>
+            <li>
+                This aligns with the complex, chaotic nature of Conway's Game of Life
+            </li>
+        </ul>
+        <p>
+            The data suggests that random initial conditions in Game of Life typically lead to cycle detection with a few hundred steps, but the system can exhibit surprising longevity in certain configurations.
+        </p>
+    </div>
+    <script type="module" src="game_of_life.js"></script>  
 </body>
+
 </html>
