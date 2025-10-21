@@ -1,4 +1,3 @@
-// Browser-compatible version - load data asynchronously
 let data = [];
 
 async function loadData() {
@@ -40,7 +39,6 @@ function bubbleSort(arr) {
     return arr
 }
 
-// Fast Quicksort implementation
 function quickSort(arr) {
     if (arr.length <= 1) {
         return arr;
@@ -104,7 +102,6 @@ function std(arr) {
 }
 
 function skewness(arr) {
-    // return 3*(mean(sorted_arr) - median(sorted_arr)) / std(sorted_arr)
     let sum = 0
     let arr_mean = mean(arr)
     for (var i = 0; i < arr.length; i++) {
@@ -122,7 +119,6 @@ function kurtosis(arr) {
     return sum / (arr.length * std(arr)**4)
 }
 
-// Excess kurtosis (more commonly used - subtracts 3)
 function excessKurtosis(arr) {
     return kurtosis(arr) - 3;
 }
@@ -193,8 +189,6 @@ let box_plot = document.getElementById('box_plot')
 let box_plot_ctx = box_plot.getContext('2d')
 
 function drawBoxPlot(median, perc25, perc75, minimum, maximum, sorted_arr) {
-    // scale - 1500 / 300, 110y, 
-    // box 
     for (var i = -1; i < 2; i+=2) { 
         // horizontal
         box_plot_ctx.beginPath()
@@ -318,19 +312,19 @@ function gaussianKernel(x) {
 }
 
 function kde(data, bandwidth, numPoints = 1000) {
-    if (data.length === 0) return { x: [], y: [] };
+    if (data.length === 0) return { x: [], y: [] }
 
-    const min = Math.min(...data);
-    const max = Math.max(...data);
-    const range = max - min;
-    const padding = range * 0.1; // Add 10% padding on each side
+    const min = Math.min(...data)
+    const max = Math.max(...data)
+    const range = max - min
+    const padding = range * 0.1
 
-    const xValues = [];
-    const yValues = [];
+    const xValues = []
+    const yValues = []
 
     // Generate x values across the range
     for (let i = 0; i < numPoints; i++) {
-        xValues.push(min - padding + (range + 2 * padding) * (i / (numPoints - 1)));
+        xValues.push(min - padding + (range + 2 * padding) * (i / (numPoints - 1)))
     }
 
     // Calculate density at each x value
