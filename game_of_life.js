@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 // Browser-compatible version - load data asynchronously
->>>>>>> 91e6f2f (commit)
 let data = [];
 
 async function loadData() {
@@ -43,10 +40,7 @@ function bubbleSort(arr) {
     return arr
 }
 
-<<<<<<< HEAD
-=======
 // Fast Quicksort implementation
->>>>>>> 91e6f2f (commit)
 function quickSort(arr) {
     if (arr.length <= 1) {
         return arr;
@@ -110,10 +104,7 @@ function std(arr) {
 }
 
 function skewness(arr) {
-<<<<<<< HEAD
-=======
     // return 3*(mean(sorted_arr) - median(sorted_arr)) / std(sorted_arr)
->>>>>>> 91e6f2f (commit)
     let sum = 0
     let arr_mean = mean(arr)
     for (var i = 0; i < arr.length; i++) {
@@ -131,10 +122,7 @@ function kurtosis(arr) {
     return sum / (arr.length * std(arr)**4)
 }
 
-<<<<<<< HEAD
-=======
 // Excess kurtosis (more commonly used - subtracts 3)
->>>>>>> 91e6f2f (commit)
 function excessKurtosis(arr) {
     return kurtosis(arr) - 3;
 }
@@ -205,11 +193,8 @@ let box_plot = document.getElementById('box_plot')
 let box_plot_ctx = box_plot.getContext('2d')
 
 function drawBoxPlot(median, perc25, perc75, minimum, maximum, sorted_arr) {
-<<<<<<< HEAD
-=======
     // scale - 1500 / 300, 110y, 
     // box 
->>>>>>> 91e6f2f (commit)
     for (var i = -1; i < 2; i+=2) { 
         // horizontal
         box_plot_ctx.beginPath()
@@ -333,21 +318,6 @@ function gaussianKernel(x) {
 }
 
 function kde(data, bandwidth, numPoints = 1000) {
-<<<<<<< HEAD
-    if (data.length === 0) return { x: [], y: [] }
-
-    const min = Math.min(...data)
-    const max = Math.max(...data)
-    const range = max - min
-    const padding = range * 0.1
-
-    const xValues = []
-    const yValues = []
-
-    // Generate x values across the range
-    for (let i = 0; i < numPoints; i++) {
-        xValues.push(min - padding + (range + 2 * padding) * (i / (numPoints - 1)))
-=======
     if (data.length === 0) return { x: [], y: [] };
 
     const min = Math.min(...data);
@@ -361,7 +331,6 @@ function kde(data, bandwidth, numPoints = 1000) {
     // Generate x values across the range
     for (let i = 0; i < numPoints; i++) {
         xValues.push(min - padding + (range + 2 * padding) * (i / (numPoints - 1)));
->>>>>>> 91e6f2f (commit)
     }
 
     // Calculate density at each x value
